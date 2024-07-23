@@ -101,5 +101,5 @@ with c3:
 c1.header("Top 10 cities")
 top_10 = df.head(10)['Temperature_C']
 c1.dataframe(top_10,use_container_width=True)
-figTopTen = px.bar(top_10, x=top_10.index, y='total')
+# figTopTen = px.bar(top_10, x=top_10.index, y='total')
                                                                     
