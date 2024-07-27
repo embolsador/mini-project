@@ -66,7 +66,7 @@ st.set_page_config(
 )
 
 st.header("CHECK THE CURRENT WEATHER")
-st.image("https://imgs.search.brave.com/Kul6Ev7J4xhHC22X35SnjP0y-Jrfjikogek-IZDWEkM/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTI2/MzU2MjM4Ni9waG90/by9iZWF1dGlmdWxs/eS1zdHJ1Y3R1cmVk/LXRodW5kZXJzdG9y/bS1pbi1idWxnYXJp/YW4tcGxhaW5zLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1y/d2t3RzF1MGVXbE92/T3h5NUdSOG41eE5z/UXR6SS1LdXRuWnNR/eFRNM0VjPQ")
+# st.image("https://imgs.search.brave.com/Kul6Ev7J4xhHC22X35SnjP0y-Jrfjikogek-IZDWEkM/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTI2/MzU2MjM4Ni9waG90/by9iZWF1dGlmdWxs/eS1zdHJ1Y3R1cmVk/LXRodW5kZXJzdG9y/bS1pbi1idWxnYXJp/YW4tcGxhaW5zLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1y/d2t3RzF1MGVXbE92/T3h5NUdSOG41eE5z/UXR6SS1LdXRuWnNR/eFRNM0VjPQ")
 st.image("https://images.theconversation.com/files/442675/original/file-20220126-17-1i0g402.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1356&h=668&fit=crop")
 city = st.text_input("Enter city name")
 if st.button("Get Weather"):
@@ -82,8 +82,8 @@ with st.spinner("Loading Data..."):
 
 # creating the ui interface
 st.subheader("Weather Data Analysis")
-st.write("This is a simple weather data analysis app that uses the data from the [Weather Data](https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data) dataset from Kaggle.")
-st.write("The app allows you to explore the data and visualize the trends in temperature, humidity,and wind speed over time.")
+st.write("This is a simple weather data analysis that uses the data from the [Weather Data](https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data) dataset from Kaggle.")
+st.write("This allows you to explore the data and visualize the trends in temperature, humidity,and wind speed over time.")
 st.write("You can also use the app to compare the weather data for different locations and see how the weather conditions vary across different regions.")
 
 # description of weather analysis
@@ -113,7 +113,7 @@ c2.subheader("Top 10 cities")
 top_10 = df.head(10)['HUMIDITY']
 c2.dataframe(top_10,use_container_width=True)
 
-c3.write("Here we can clearly see that the temperature and the humidity in the last 5 years as per the data, this data is according to the different time and dateThe temperature is increasing and the humidity is decreasing, this is due to the climate change and the global warming, this is a very serious issue and we need to take action to stop this issue, we need to take action to stop this issue, we need to take action to stop this issue, we need to take action to stop this issue, we need to take action ")
+c3.write("Here we can clearly see that the temperature and the humidity in the last 5 months of the year 2024 as per the data, this data is according to the different time and dateThe temperature is increasing and the humidity is decreasing, this is due to the climate change and the global warming, this is a very serious issue and we need to take action to stop this issue, we need to take action to stop this issue, we need to take action to stop this issue, we need to take action to stop this issue, we need to take action ")
 
 
 # creating a histogram for high temperature
@@ -126,15 +126,17 @@ st.write("You can use the area graph to compare the temperature, humidity etc. d
 st.write(df)
 
 # Select column for the area graph
-column = st.selectbox("Select a column", df.columns)
+# column = st.selectbox("Select a column", df.columns)
 
 # selesct column for the histogram graqph
 hist_column = st.selectbox("Select a column for histogram", df.columns)
 
 fig, ax = plt.subplots()
-df[column].hist(ax=ax, bins=10)
-ax.set_title(f'Histogram of {column}')
-ax.set_xlabel(column)
+df[hist_column].hist(ax=ax, bins=10)
+ax.set_title(f'Histogram of {hist_column}')
+ax.set_xlabel(hist_column)
 ax.set_ylabel('Frequency')
 st.pyplot(fig)
+
+
 
