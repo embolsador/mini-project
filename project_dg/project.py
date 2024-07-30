@@ -125,9 +125,6 @@ st.write("You can use the area graph to compare the temperature, humidity etc. d
 # st.plotly_chart(fig,use_container_width=True)
 st.write(df)
 
-# Select column for the area graph
-# column = st.selectbox("Select a column", df.columns)
-
 # selesct column for the histogram graqph
 hist_column = st.selectbox("Select a column for histogram", df.columns)
 
@@ -137,6 +134,7 @@ ax.set_title(f'Histogram of {hist_column}')
 ax.set_xlabel(hist_column)
 ax.set_ylabel('Frequency')
 st.pyplot(fig)
+
 
 
 
